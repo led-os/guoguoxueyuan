@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/root"
+    android:layout_height="300dp">
+
+    <Button
+        android:id="@+id/caiDan"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bule_raio_kuang"
+        android:text="全部"
+        android:textColor="@color/appColor"
+        android:textSize="14dp" />
+
+    <Button
+        android:id="@+id/yixue"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bule_raio_kuang"
+        android:text="已学"
+        android:textColor="@color/appColor"
+        android:textSize="14dp" />
+
+    <Button
+        android:id="@+id/weiXue"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bule_raio_kuang"
+        android:text="未学"
+        android:textColor="@color/appColor"
+        android:textSize="14dp" />
+
+    <Button
+        android:id="@+id/zhengxue"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bule_raio_kuang"
+        android:text="正学"
+        android:textColor="@color/appColor"
+        android:textSize="14dp" />
+
+</FrameLayout>

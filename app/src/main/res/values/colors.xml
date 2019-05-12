@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="appColor">#0aa0e6</color>
+    <color name="lightBule">#71b3fe</color>
+    <color name="dackbule">#717efd</color>
+    <!--覆盖颜色-->
+    <color name="bgColor_overlay">#60000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="lightgwe">#72eeeeee</color>
+    <color name="buemain">#2dbbfe</color>
+    <color name="jinbiduihuancolor">#a8e3fe</color>
+
+    <color name="touming">#00000000</color>
+    <color name="bantouming">#80000000</color>
+    <color name="lbantouming">#50000000</color>
+    <color name="lightbantouming">#80b5b4b4</color>
+    <color name="bantoumingblue">#556C8BCC</color>
+    <color name="chengbaotop">#92425895</color>
+    <color name="bluebantoumingtwo">#CC6C8BCC</color>
+    <color name="bluebantouminglight">#336C8BCC</color>
+    <color name="gong_lue_back">#cde2f3</color>
+    <color name="gong_lue_teacher">#d6e6f6</color>
+
+    <color name="bantouminggwe">#CC555555</color>
+    <color name="bantouminwhite">#CCFFFFFF</color>
+    <color name="lightbantouminwhite">#48ffffff</color>
+    <color name="lightbantoumingwhite">#5b717171</color>
+    <color name="yellow">#FFDE01</color>
+    <color name="gwe">#555555</color>
+    <color name="dianduqu">#777777</color>
+    <color name="ligthgwe">#b5b4b4</color>
+    <color name="red">#FE4845</color>
+    <color name="lightred">#77FE4845</color>
+    <color name="green">#23A640</color>
+    <color name="divider_color">#3bd7d7da</color>
+    <color name="light_divider_color">#f5f5f6</color>
+    <color name="line_diver_color">#d2d2d3</color>
+    <color name="orange">#ff6600</color>
+    <color name="lightorange">#ff9500</color>
+    <color name="lightorangetwo">#70ffbf00</color>
+    <color name="dack_orange">#bbb43a25</color>
+    <color name="black">#000000</color>
+    <color name="hui">#7f7f7f</color>
+    <color name="light_gray">#bcbcbc</color>
+    <color name="one">#efE9E9E9</color>
+    <color name="two">#cfE9E9E9</color>
+    <color name="three">#3fE9E9E9</color>
+    <color name="zise">#6b38a1</color>
+    <color name="chenggong">#fbdf0a98</color>
+    <color name="a">#f4a2bc</color>
+    <color name="b">#8dacd8</color>
+    <color name="c">#fdd766</color>
+    <color name="d">#c6c85e</color>
+    <color name="light_green">#7976da8c</color>
+    <color name="shuxuecolor">#852dc9ca</color>
+    <color name="lightshuxuecolor">#322dc9ca</color>
+    <color name="tingli">#f2eee4</color>
+    <color name="kousuan">#285050</color>
+    <color name="kousuan1">#fcd601</color>
+    <color name="kousuan2">#323232</color>
+    <color name="kousuan3">#fda201</color>
+    <color name="kousuan4">#1294da</color>
+    <color name="tinglitext">#eb5d5d</color>
+    <color name="colorGray">#33000000</color>
+    <color name="bianyinghuang">#fae08b</color>
+    <color name="chenyu1">#6c9ad1</color>
+    <color name="chenyu2">#f29701</color>
+    <color name="chengyu3">#f56e44</color>
+    <color name="chengyu4">#ea44f5</color>
+    <color name="chengyu5">#e05517</color>
+    <color name="baodian">#e9f1fe</color>
+    <color name="beibao">#303030</color>
+    <color name="jinse">#dfd4b0</color>
+    <color name="guoxue">#7f6241</color>
+    <color name="hui_fu_back">#f3f0cd</color>
+    <color name="cai_wu">#fc7660</color>
+    <color name="bian_bian">#64d3e1</color>
+    <color name="new_kousuan1">#0191de</color>
+    <color name="new_kousuan2">#fd9f02</color>
+    <color name="new_kousuan3">#1d4044</color>
+    <color name="new_kousuan4">#fddb02</color>
+
+
+</resources>

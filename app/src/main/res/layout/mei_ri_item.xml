@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/juzi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/appColor" />
+
+        <TextView
+            android:id="@+id/cnJuZi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text=" "
+            android:textColor="@color/lightorange" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/youxi"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:src="@mipmap/mryjyx" />
+
+        <ImageView
+            android:id="@+id/lianxi"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:src="@mipmap/mryjlx" />
+
+
+        <ImageView
+            android:id="@+id/ting"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:src="@mipmap/mryjlb" />
+
+        <ImageView
+            android:id="@+id/shouchang"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:src="@mipmap/aixinsc" />
+    </LinearLayout>
+
+</LinearLayout>

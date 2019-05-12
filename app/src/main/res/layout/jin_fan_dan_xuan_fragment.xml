@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tibjmu"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/quesition"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="150dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@mipmap/anniudaan"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:text=""
+        android:textColor="@color/gwe"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/text_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/anniudaan"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:text=""
+        android:textColor="@color/gwe"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/text_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/anniudaan"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:text=""
+        android:textColor="@color/gwe"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/text_d"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/anniudaan"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:text=""
+        android:textColor="@color/gwe" />
+
+
+</LinearLayout>

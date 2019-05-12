@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/beijche"
+    android:orientation="vertical"
+    android:paddingBottom="60dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:id="@+id/sixRel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="120dp"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/sixImg"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/fenche" />
+
+            <TextView
+                android:id="@+id/sixNum"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="60dp"
+                android:background="@color/divider_color"
+                android:text="no2"
+                android:textColor="@color/gwe"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/sixSuo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/suohuang" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:id="@+id/fiveRel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/fiveImg"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/lanche" />
+
+            <TextView
+                android:id="@+id/fiveNum"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="60dp"
+                android:background="@color/divider_color"
+                android:text="no2"
+                android:textColor="@color/gwe"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/fiveSuo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/suohuang" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:id="@+id/fourRel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="120dp"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/fourImg"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/fenche" />
+
+            <TextView
+                android:id="@+id/fourNum"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="60dp"
+                android:background="@color/divider_color"
+                android:text="no2"
+                android:textColor="@color/gwe"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/fourSuo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/suohuang" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:id="@+id/threeRel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/threeImg"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/lanche" />
+
+            <TextView
+                android:id="@+id/threeNum"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="60dp"
+                android:background="@color/divider_color"
+                android:text="no2"
+                android:textColor="@color/gwe"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/threeSuo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/suohuang" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:id="@+id/twoRel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="50dp"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/twoImg"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/hongche" />
+
+            <TextView
+                android:id="@+id/twoNum"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:background="@color/divider_color"
+                android:text="no2"
+                android:textColor="@color/gwe"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/twoSuo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/suohuang" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:id="@+id/oneRel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/oneImg"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/fenche2" />
+
+            <TextView
+                android:id="@+id/oneNum"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:background="@color/divider_color"
+                android:text="no1"
+                android:textColor="@color/gwe"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/oneSuo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/suohuang" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

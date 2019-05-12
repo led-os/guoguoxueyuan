@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="@color/lightBule">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="0dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:contentDescription="@null"
+            android:padding="12.5dp"
+            android:src="@mipmap/fanhui" />
+
+
+        <TextView
+            android:id="@+id/edittext"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingEnd="6dp"
+            android:paddingStart="6dp"
+            android:singleLine="true"
+            android:text="我的收藏"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</LinearLayout>

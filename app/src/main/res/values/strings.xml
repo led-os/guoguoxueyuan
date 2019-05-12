@@ -1,0 +1,503 @@
+<resources>
+    <string name="app_name">蝈蝈学苑</string>
+
+    <string name="hello_world">蝈蝈学苑</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">名字</string>
+
+
+    <string name="title_activity_on_line">OnLineActivity</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_ji_gou_xiang_qing">JiGouXiangQingActivity</string>
+    <string name="title_activity_teacher_jie_shao">TeacherJieShaoActivity</string>
+    <string name="title_activity_zhao_sheng_xiang_qing">ZhaoShengXiangQingActivity</string>
+    <string name="parent">家长</string>
+    <string name="teacher">教师</string>
+    <string name="train">培训</string>
+    <string name="child">幼儿</string>
+    <string name="student">学生</string>
+    <string name="train_dece">机构简介</string>
+    <string name="back">返回</string>
+    <string name="on_line_jin_pin">线上精品</string>
+    <string name="un_line_jin_pin">线下精品</string>
+    <string name="activity_area">活动专区</string>
+    <string name="see_more">查看更多</string>
+    <string name="auditions_jin_pin">试听课</string>
+    <string name="small_class">微课堂</string>
+    <string name="notice">公告</string>
+    <string name="my_small_class">我的微课</string>
+    <string name="my_consultation">我的咨询</string>
+    <string name="my_answer">我的问答</string>
+    <string name="train_collection">培训收藏</string>
+    <string name="teaching_children">教子有方</string>
+    <string name="heart_linked">心连心微课堂</string>
+    <string name="recommend_mechanism">推荐机构</string>
+    <string name="jin_xuan_mechanism">精选机构</string>
+    <string name="more">更多</string>
+    <string name="another_batch">换一批</string>
+    <string name="search">搜索</string>
+    <string name="apply_for_training_teacher">申请成为平台老师</string>
+    <string name="commodity">商品</string>
+    <string name="education_headline">教育头条</string>
+    <string name="on_line_expert">在线专家</string>
+    <string name="expert_consultation">咨询老师</string>
+    <string name="current_version">当前版本：1.1</string>
+    <string name="trainer_collection">培训师收藏</string>
+    <string name="consultant_collectionn">咨询师收藏</string>
+    <string name="edu_headline">教育头条</string>
+    <string name="comment">评论</string>
+    <string name="speek">我来说两句</string>
+    <string name="edu_header">教育头条</string>
+    <string name="everyday">每天上课时间</string>
+    <string name="everyweek">每周上课时间</string>
+    <string name="add_adress">添加收货地址</string>
+    <string name="used_email">（用于邮寄课程配套教材）</string>
+    <string name="curriculum_price">课程价格</string>
+    <string name="bug_vip">购买vip获取更多权益，查看权益</string>
+    <string name="open">开启</string>
+    <string name="close">关闭</string>
+    <string name="Rights_and_interests">会员权益</string>
+    <string name="alipay">支付宝支付</string>
+    <string name="weChat">微信支付</string>
+    <string name="balance">余额支付</string>
+    <string name="noAlipay">检测到此设备不支持支付宝支付</string>
+    <string name="noWeiXin">检测到此设备不支持微信支付</string>
+    <string name="vipcourse">vip课程价格</string>
+    <string name="myCourse">我的课程</string>
+    <string name="myArea">我的活动</string>
+    <string name="myCollection">我的收藏</string>
+    <string name="activityDece">活动详情</string>
+    <string name="sendPeople">发起人</string>
+    <string name="participate">参与人</string>
+    <string name="no_ding">不支持退订</string>
+    <string name="lianxi">联系平台</string>
+    <string name="yuYueCourse">预约课程</string>
+    <string name="immediatelybuy">立即购买</string>
+    <string name="addcomment">添加评论</string>
+    <string name="helpteacher">培训老师</string>
+    <string name="consultantNum">咨询次数</string>
+    <string name="praiseRate">好评率</string>
+    <string name="percentage">\u0025</string>
+    <string name="onLineTeacher">连线老师</string>
+    <string name="fans">粉丝</string>
+    <string name="phone">电话</string>
+    <string name="lian_xi_fang_shi">联系方式</string>
+    <string name="jiao_xue_ke_mu">教学科目</string>
+    <string name="jiao_xue_nian_ji">教学年级</string>
+    <string name="zheng_shu">证书</string>
+    <string name="getCard">手持身份证证明</string>
+    <string name="liezi">示例</string>
+    <string name="introduceMe">自我介绍</string>
+    <string name="submission">提交</string>
+    <string name="shi_lie">示例</string>
+    <string name="becomeZiXun">申请成为平台咨询师</string>
+    <string name="myCurriculum">我的课程</string>
+    <string name="appointment_on_line">在线预约</string>
+    <string name="finance">课程财务</string>
+    <string name="on_line_answer">在线问答</string>
+    <string name="on_line_zi_xun">咨询在线</string>
+    <string name="answer_on_line">问答在线</string>
+    <string name="yu_yue_ding_dan">预约订单</string>
+    <string name="yu_yue_xin_xi">预约信息</string>
+    <string name="zi_xun_zhu_ti">咨询主题</string>
+    <string name="zhi_xun_fang_shi">咨询方式</string>
+    <string name="zi_xun_shi_chang">咨询时长</string>
+    <string name="buy_num">购买次数</string>
+    <string name="he_ji_price">合计费用</string>
+    <string name="my_data">我的信息</string>
+    <string name="age">年龄</string>
+    <string name="question_dece">问题描述</string>
+    <string name="zi_xun_dan_jia">咨询单价</string>
+    <string name="write_pin_yu">写评语</string>
+    <string name="zhuan_ru_yu_e">转入余额提现</string>
+    <string name="z_r_y_e">转入余额</string>
+    <string name="set_price">设置问答价格</string>
+    <string name="name_et">姓名：</string>
+    <string name="li_ji_yu_yue">立即预约</string>
+    <string name="phone_et">电话：</string>
+    <string name="shang_ke_wan">上课完</string>
+    <string name="see_people">查看人</string>
+    <string name="ke_cheng_student">上课人员</string>
+    <string name="que_xi_ren_yuan">缺席人员</string>
+    <string name="no_absent">未缺席</string>
+    <string name="myShiTing">我的试听课</string>
+    <string name="dai_shou_ke">待授课程</string>
+    <string name="is_ok">已完成</string>
+    <string name="nian_ji">年级</string>
+    <string name="nian_ji_ed">年级：</string>
+    <string name="dai_hui">待回复</string>
+    <string name="que_ren_hui_fu">确认回复</string>
+    <string name="yong_hu_yu_yin">用户语音</string>
+    <string name="hui_fu">回复</string>
+    <string name="teacher_yu_yin">教师语音</string>
+    <string name="an_zhu_lu_yin">按住录音</string>
+    <string name="myYuYue">我的预约</string>
+    <string name="li_ji_lian_xian">立即连线</string>
+    <string name="guan_zhu">关注</string>
+    <string name="yu_yue">预约</string>
+    <string name="lian_xi_ping_tai">联系平台</string>
+    <string name="fen_shi_guan_zhu">个粉丝关注</string>
+    <string name="ren_yi_zi_xun">人已咨询</string>
+    <string name="shou_dao_gan_xie">次收到感谢</string>
+    <string name="cancel">取消</string>
+    <string name="people_zi_xun_num">人已咨询过</string>
+    <string name="zi_xun_fang_shi">咨询方式</string>
+    <string name="video">视频</string>
+    <string name="audio">语音</string>
+    <string name="yu_yue_shi_jian">预约时间</string>
+    <string name="check_time">选择时间</string>
+    <string name="zi_xun_time">咨询时长</string>
+    <string name="zi_xun_num">咨询次数</string>
+    <string name="he_ji">合计</string>
+    <string name="ge_ren_zi_liao">个人资料</string>
+    <string name="phone_dece">手机号不对外公开，仅用于电话咨询（匿名转接，安全私密有保障）</string>
+    <string name="remaks">备注</string>
+    <string name="ti_jiao_xu_zhi">提交即表示同意《用户咨询协议》</string>
+    <string name="one">1</string>
+    <string name="head">头像</string>
+    <string name="nickname">昵称</string>
+    <string name="sex">性别</string>
+    <string name="birthday">生日</string>
+    <string name="notGet">未获得</string>
+    <string name="have">已获得</string>
+    <string name="check_updata_apk">最新的安装包已经就绪， 恭请主人体验尝新</string>
+    <string name="cancal">取消</string>
+    <string name="updata">立即更新</string>
+    <string name="ok">确定</string>
+    <string name="write_answer">填写答案</string>
+    <string name="next">下一题</string>
+    <string name="forget_psd">忘记密码</string>
+    <string name="deng_lu">登录</string>
+    <string name="password">密码</string>
+    <string name="user_or_phone">用户名/手机</string>
+    <string name="code">验证码</string>
+    <string name="new_pwd">新密码/Password</string>
+    <string name="getCode">获取验证码</string>
+    <string name="everydayspeek">每日一句</string>
+    <string name="collection">收藏</string>
+    <string name="seeVideoStudentChengYu">看动画学成语</string>
+    <string name="zhu_ce_xie_yi">注册协议</string>
+    <string name="next_bu">下一步</string>
+    <string name="mian_fei_shi_ting">免费试听</string>
+    <string name="onLineAnswer">在线问答</string>
+    <string name="send">发布</string>
+    <string name="lnquiryAnswer">咨询问答</string>
+    <string name="sendAnswer">提交答案</string>
+    <string name="set_guan_jian">输入关键字</string>
+    <string name="all">全部</string>
+    <string name="xiangTong">下面发音相同的画</string>
+    <string name="buTong">发音不同的画</string>
+    <string name="drag">将对应的图标拖入框中</string>
+    <string name="rightAnswer">正确答案</string>
+    <string name="duanWen">短文</string>
+    <string name="monthPrice">元/月</string>
+    <string name="seasonPrice">元/季</string>
+    <string name="halfprice">元/半年</string>
+    <string name="yearPrice">元/年</string>
+    <string name="myActivity">我的活动</string>
+    <string name="buyVip">选择vip开通时限</string>
+    <string name="bankPhone">银行卡预留手机号</string>
+    <string name="tiXianGuanLi">提现管理</string>
+    <string name="zhang_hu_yu_e">账户可用余额（元）</string>
+    <string name="ti_xian_jin_e">提现金额</string>
+    <string name="phoneNumber">手机号</string>
+    <string name="ti_xian_type">提现方式</string>
+    <string name="ClassScheduleCard">我的课程表</string>
+    <string name="keChenBiao">课程表</string>
+    <string name="taday_all">当天共</string>
+    <string name="ke">节课</string>
+    <string name="li_ji_zhu_ce">立即注册</string>
+    <string name="set_real_phone">输入收件人真实电话</string>
+    <string name="answer">答案：</string>
+    <string name="addAnswer">请填写答案</string>
+    <string name="readAll">阅读全文</string>
+    <string name="see_crous"><![CDATA[查看上课记>>]]></string>
+    <string name="que_ren_zhi_fu">确认支付</string>
+    <string name="price">价格：</string>
+    <string name="fu_wu_tiao_kuan">购买前我已阅读：《用户须知和售后服务条款》</string>
+    <string name="cha_kan_quan_yi">购买vip获取更多免费课程，立即查看权益</string>
+    <string name="buy_vip">升级为vip</string>
+    <string name="moudle_mian_fei">该项目为自愿开通使用,\n不影响其他免费功能的使用</string>
+    <string name="buy_moudle_price">选择课程购买时限</string>
+    <string name="choose_vip_time">选择vip开通时限</string>
+    <string name="yuan">元</string>
+    <string name="cai_wu_zong_zi_chang">账户总资产</string>
+    <string name="ming_xi">明细</string>
+    <string name="cong_zhi">充值</string>
+    <string name="bank_card">银行卡</string>
+    <string name="ti_xian">提  现</string>
+    <string name="zhang_hu">账户</string>
+    <string name="myTeam">我的团队</string>
+    <string name="teamYongJin">团队佣金</string>
+    <string name="lei_ji_yong_jin">累计佣金</string>
+    <string name="myStatus">我的代理</string>
+    <string name="mingXi">转出明细</string>
+    <string name="tui_jian_er_wei_ma">推荐二维码</string>
+    <string name="ke_zhuan_ru">可转入金额</string>
+    <string name="zhuanRuJinE">转入金额(元)</string>
+    <string name="jinE">￥</string>
+    <string name="zhuan_ru_bei_zhu">转入\'余额\'才能提现</string>
+    <string name="zhuanYE">转入余额</string>
+    <string name="gongGao">公告</string>
+    <string name="toDaiLi">申请成为代理</string>
+    <string name="beiZhu">备注</string>
+    <string name="quYuLeiJI">区域累计金额</string>
+    <string name="quYuFenDaiLi">区域分代理</string>
+    <string name="zhuCheVipNum">注册会员数</string>
+    <string name="yiTiXian">已提现</string>
+    <string name="keTiXian">可提现</string>
+    <string name="shouYiMingXi">收益明细</string>
+    <string name="chaXun">查询</string>
+    <string name="startTime">起始时间</string>
+    <string name="endTime">结束时间</string>
+    <string name="yongJinShouYi">佣金收益</string>
+    <string name="chaXunTime">查询时间</string>
+    <string name="start">开始</string>
+    <string name="end">结束</string>
+    <string name="yi_Zi_you_xi">益智游戏</string>
+    <string name="guoguodou">果果豆</string>
+    <string name="doudouShangCheng">豆豆商城</string>
+    <string name="guiZe">规则</string>
+    <string name="duiHuanJiLv">兑换记录</string>
+    <string name="liJiDuiHuan">立即兑换</string>
+    <string name="shangPinJieShao">商品介绍</string>
+    <string name="yiDuihuan">已兑换</string>
+    <string name="buyCount">购买数量</string>
+    <string name="buy">购买</string>
+    <string name="kuCun">当前库存:</string>
+    <string name="addAdress">添加收件地址</string>
+    <string name="shangPin">商品</string>
+    <string name="heji">合计:</string>
+    <string name="queRenDingDan">确认订单</string>
+    <string name="day">天</string>
+    <string name="lianXu">天，连续签到：</string>
+    <string name="gongQianDao">您已签到共</string>
+    <string name="qianDaoJiLv">签到记录</string>
+    <string name="qianDaoRenWu">签到任务</string>
+    <string name="qianDaoGuiZe">签到规则</string>
+    <string name="qianDao">签到</string>
+    <string name="ri">日</string>
+    <string name="get">获得</string>
+    <string name="shengqingruzhu">请填写申请入驻的联系方式</string>
+    <string name="cn">中</string>
+    <string name="chong_lu">重录</string>
+    <string name="zhongwen">中文</string>
+    <string name="right_answer">正确答案</string>
+    <string name="jump">跳过</string>
+    <string name="chooseWrong">选出不正确的单词进行修改</string>
+    <string name="tijiao">提交</string>
+    <string name="he_cheng_pei_yin">合 成 配 音</string>
+    <string name="shu_ru">输入关键字</string>
+    <string name="bugCar">购物车</string>
+    <string name="liJiGouMai">立即购买</string>
+    <string name="daoJiShi">倒计时</string>
+    <string name="xiaZai">下载</string>
+    <string name="shouChang">收藏</string>
+    <string name="writeLiuYan">写留言</string>
+    <string name="jinShai">竞赛</string>
+    <string name="jilei">积累</string>
+    <string name="lianXi">练习</string>
+    <string name="sendpl">发布评论</string>
+    <string name="teamDece">团队说明</string>
+    <string name="youxiaoqi">有效期至</string>
+    <string name="dingdanman">订单满</string>
+    <string name="canused">可使用</string>
+    <string name="yigoumai">已购买</string>
+    <string name="smallcouse">微课堂详情</string>
+    <string name="notuiding">不支持退订</string>
+    <string name="lainxipingtai">联系平台</string>
+    <string name="pause">暂停</string>
+    <string name="jianJie">简介</string>
+    <string name="seeQuanYi">点击查看特权</string>
+    <string name="shouzhimingxi">收支明细</string>
+    <string name="chikaren">持卡人</string>
+    <string name="chikarenxingming">持卡人姓名</string>
+    <string name="kaihuhang">开户行</string>
+    <string name="carnum">卡号    </string>
+    <string name="shurubankcard">请输入银行卡卡号</string>
+    <string name="shenfengzheng">身份证</string>
+    <string name="querenbangding">确认绑定</string>
+    <string name="phonenum">手机号</string>
+    <string name="shurushenfencard">请输入身份证卡号</string>
+    <string name="addbank">添加银行卡</string>
+    <string name="addzhifubao">添加支付宝</string>
+    <string name="seemingxi">查看明细</string>
+    <string name="pinjiahint">亲，您想说点什么呢...</string>
+    <string name="english">英语</string>
+    <string name="sousuoteacher">搜索老师</string>
+    <string name="shangweiguanzhu">尚未关注幼儿园</string>
+    <string name="hot">热搜</string>
+    <string name="renwuguize">任务规则</string>
+    <string name="chooseTiXianType">选择提现方式</string>
+    <string name="cancle">取 消</string>
+    <string name="youhuijuan">优惠劵</string>
+    <string name="chooseYouHuiJuan">选择优惠劵</string>
+    <string name="onlinepay">在线支付</string>
+    <string name="codepay">使用激活码</string>
+    <string name="add">+</string>
+    <string name="reduce">-</string>
+    <string name="num">数量</string>
+    <string name="small_shou_ru">微课收入</string>
+    <string name="allmoney">总金额￥</string>
+    <string name="zhuanrujilv"><![CDATA[转入余额记录>>]]></string>
+    <string name="havemoney">获得收入：￥</string>
+    <string name="daiHuiFu">待回复</string>
+    <string name="lijiboda">立即拨打</string>
+    <string name="tingDuanYu">听短文，选择正确的选项</string>
+    <string name="lainxi">练习</string>
+    <string name="activitying">活动进行中</string>
+    <string name="lijibaoming">立即报名</string>
+    <string name="gohear">到这去</string>
+    <string name="shenqingshiting">申请试听</string>
+    <string name="yuyuebaoming">预约报名</string>
+    <string name="zixun">咨询</string>
+    <string name="ageed">年龄：</string>
+    <string name="nameed">姓名：</string>
+    <string name="calssed">年级：</string>
+    <string name="phoneed">电话：</string>
+    <string name="lijiyuyue">立即预约</string>
+    <string name="fenlei">分类</string>
+    <string name="gggushi">蝈蝈故事</string>
+    <string name="shangcheng">商城</string>
+    <string name="jingping">精品</string>
+    <string name="zhongbangjinpin">重磅精品</string>
+    <string name="jingxuan">精选专辑</string>
+    <string name="schoolname">机构名</string>
+    <string name="getvip">立即升级vip</string>
+    <string name="guoguodouduihuan">果果豆兑换金币</string>
+    <string name="bankuaiyulan">板块预览</string>
+    <string name="jibie">级别leve</string>
+    <string name="bofangliang">总播放量：</string>
+    <string name="zuopingxiangqing">作品详情</string>
+    <string name="seeMoreHaveYouJian"><![CDATA[查看更多>>]]></string>
+    <string name="lian_xi_pin_tai">我们已经收到您的信息平台会在第一时间联系您或者加平台微信号333</string>
+    <string name="zhuti">主题</string>
+    <string name="paixu">排序</string>
+    <string name="shuruguanjian">输入关键字</string>
+    <string name="shousuo">搜索</string>
+    <string name="newHuiFu">最新回复</string>
+    <string name="vipJia">vip:</string>
+    <string name="pingLun">评论</string>
+    <string name="seeJieSao">点我看介绍</string>
+    <string name="pinLunNum">次收到评论</string>
+    <string name="goonlinepay">在线支付开通</string>
+    <string name="liaxipintaikaitong">联系平台开通</string>
+    <string name="vipPrice">vip价格:</string>
+    <string name="addadress">添加收件地址</string>
+    <string name="shangping">商品</string>
+    <string name="myshangcheng">我的商城</string>
+    <string name="quanbufenlei">全部分类</string>
+    <string name="mycollection">我的收藏</string>
+    <string name="quanBuHuiFu">全部回复</string>
+    <string name="letmespeek">我来说两句</string>
+    <string name="look_see">随便逛逛</string>
+    <string name="phone_login">手机登录</string>
+    <string name="myGouCar">我的购物车</string>
+    <string name="oneclass">一年级</string>
+    <string name="guoguosmallxuetang">蝈蝈微学堂</string>
+    <string name="weiketang">微课堂</string>
+    <string name="myzixun">我的咨询</string>
+    <string name="mycaiwu">我的财务</string>
+    <string name="goshangcheng">进入商城</string>
+    <string name="gushifenlei">故事分类</string>
+    <string name="qiandaorenwuguize">完成签到任务得果果豆喔!小朋友加油吧！</string>
+    <string name="foot_two_title">听录音选择听到的句子\n或选择正确的答语</string>
+    <string name="shuruguanjianzi">输入关键字</string>
+    <string name="shuruzhuanjinamekey">输入专辑名称关键字</string>
+    <string name="ti_xian_bei_zhu">\t\t每月8日，18日，28日为申请提现日，申请提现日+2个工作日提现金额打到您指定的账户， 请正确填写您的银行卡或支付宝账号。</string>
+    <string name="downExcept">无法识别本设备的网络类型，请您换台手机或设备，谢谢!</string>
+    <string name="people_like_teacher">人喜欢老师</string>
+
+
+</resources>

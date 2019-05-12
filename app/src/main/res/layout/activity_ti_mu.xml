@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ti_mu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test720.grasshoppercollege.module.tingLiTest.TiMuActivity">
+
+    <com.test720.grasshoppercollege.myViews.CustomViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include layout="@layout/back_fan_hui_three" />
+</RelativeLayout>

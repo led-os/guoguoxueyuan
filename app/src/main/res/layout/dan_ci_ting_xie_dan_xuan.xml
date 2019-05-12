@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/beijqiu"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="100dp"
+            android:background="@mipmap/biankuangxian"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/appColor"
+                    android:textSize="17sp" />
+
+                <LinearLayout
+                    android:id="@+id/video"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bule_back_kuang"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/laba"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/shengy" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_a"
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:background="@mipmap/a"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:paddingEnd="10dp"
+                android:paddingStart="90dp"
+                android:text=""
+                android:textColor="@color/green"
+                android:textSize="17sp"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/text_b"
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:background="@mipmap/b"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:paddingEnd="10dp"
+                android:paddingStart="90dp"
+                android:text=""
+                android:textColor="@color/green"
+                android:textSize="17sp"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/text_c"
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:background="@mipmap/c"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:paddingEnd="10dp"
+                android:paddingStart="90dp"
+                android:text=""
+                android:textColor="@color/green"
+                android:textSize="17sp"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/text_d"
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:background="@mipmap/d"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:paddingEnd="10dp"
+                android:paddingStart="90dp"
+                android:text=""
+                android:textColor="@color/green"
+                android:textSize="17sp"
+                tools:ignore="RtlSymmetry" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+

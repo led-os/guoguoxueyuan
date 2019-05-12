@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="huoDongArea">
+        <item>全球</item>
+        <item>全国</item>
+        <item>全省</item>
+        <item>全市</item>
+    </string-array>
+    <string-array name="huoDongAutor">
+        <item>学校</item>
+        <item>社会人</item>
+        <item>老师</item>
+        <item>学生</item>
+    </string-array>
+    <string-array name="huoDongType">
+        <item>全部</item>
+        <item>要钱</item>
+        <item>免费</item>
+    </string-array>
+    <string-array name="huoDongStatus">
+        <item>全部</item>
+        <item>过期</item>
+        <item>未进行</item>
+    </string-array>
+
+</resources>

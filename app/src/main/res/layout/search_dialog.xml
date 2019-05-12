@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_divider_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/appColor"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:contentDescription="@null"
+            android:padding="7dp"
+            android:src="@mipmap/fanhui" />
+
+        <EditText
+            android:id="@+id/edittext"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_back"
+            android:drawableStart="@mipmap/pic_search"
+            android:gravity="center_vertical"
+            android:hint="@string/shu_ru"
+            android:inputType="text"
+            android:paddingEnd="6dp"
+            android:paddingStart="6dp"
+            android:singleLine="true"
+            android:textColor="@color/gwe"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="35dp">
+
+            <ImageView
+                android:id="@+id/xiaoxi"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                android:src="@mipmap/golan" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/hot"
+        android:textColor="@color/gwe"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <com.zhy.view.flowlayout.TagFlowLayout
+        android:id="@+id/tag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

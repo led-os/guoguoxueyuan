@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".module.gongLue.youEr.KindergartenActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/guanZhu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/bantouming"
+                    android:drawablePadding="5dp"
+                    android:gravity="end"
+                    android:paddingBottom="7dp"
+                    android:paddingEnd="20dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="7dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/dalaba" />
+
+                <ViewFlipper
+                    android:id="@+id/gongGao"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:autoStart="true"
+                    android:flipInterval="2000"
+                    android:inAnimation="@anim/anim_come_in"
+                    android:outAnimation="@anim/anim_get_out">
+
+                </ViewFlipper>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/jieshao"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="1dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@mipmap/kindergarten" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="1dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/zhaosheng"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@mipmap/zhaoshengxinxi" />
+
+            <ImageView
+                android:id="@+id/huodong"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@mipmap/youeractivity" />
+
+            <ImageView
+                android:id="@+id/xingQu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@mipmap/yexqb" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/yuanZhang"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="1dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@mipmap/yzjs" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="1dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/teacher"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@mipmap/backboneteacher" />
+
+            <ImageView
+                android:id="@+id/rongYu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@mipmap/yeyongyu" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/teSe"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="1dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@mipmap/kingergartents" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="1dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/classXC"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@mipmap/classxc" />
+
+            <ImageView
+                android:id="@+id/classTeacher"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@mipmap/classteacher" />
+
+            <ImageView
+                android:id="@+id/shiPu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@mipmap/everdaysp" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

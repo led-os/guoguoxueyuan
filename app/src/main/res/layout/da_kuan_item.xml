@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="5dp">
+
+    <TextView
+        android:id="@+id/money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/gwe"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/staue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="失败"
+        android:textColor="@color/appColor"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/money"
+        android:layout_marginTop="5dp"
+        android:text="2018-1-1"
+        android:textColor="@color/light_gray"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/shouxu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/staue"
+        android:layout_marginTop="5dp"
+        android:text="300"
+        android:textColor="@color/light_gray"
+        android:textSize="14dp" />
+</RelativeLayout>

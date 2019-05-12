@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <GridView
+        android:id="@+id/gv_emotions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_divider_color"
+        android:gravity="center"
+        android:horizontalSpacing="0dp"
+        android:numColumns="6"
+        android:paddingBottom="14dp"
+        android:paddingTop="14dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="14dp" />
+</RelativeLayout>

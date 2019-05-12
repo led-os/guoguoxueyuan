@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/xingkongfour">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.test720.grasshoppercollege.myViews.TanXianGuankaView
+            android:id="@+id/four"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            auto:src="@drawable/bx1"
+            android:layout_gravity="end"
+            android:layout_marginEnd="80dp"
+            android:layout_weight="1"
+            auto:suo="false" />
+
+        <com.test720.grasshoppercollege.myViews.TanXianGuankaView
+            android:id="@+id/three"
+            android:layout_width="140dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_weight="1"
+            auto:src="@mipmap/xktleven" />
+
+        <com.test720.grasshoppercollege.myViews.TanXianGuankaView
+            android:id="@+id/two"
+            android:layout_width="160dp"
+            android:layout_height="0dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="30dp"
+            android:layout_weight="1"
+            auto:src="@mipmap/xkshiyi" />
+
+        <com.test720.grasshoppercollege.myViews.TanXianGuankaView
+            android:id="@+id/one"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            auto:src="@mipmap/xkten" />
+    </LinearLayout>
+</RelativeLayout>

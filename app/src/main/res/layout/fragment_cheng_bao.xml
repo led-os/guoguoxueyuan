@@ -1,0 +1,212 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.test720.grasshoppercollege.myViews.MainViewPager
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@mipmap/thee_beijin_top"
+        android:orientation="horizontal"
+        android:paddingTop="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:paddingTop="15dp">
+
+            <LinearLayout
+                android:id="@+id/guoguodou"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="12.5dp"
+                android:layout_marginTop="12.5dp"
+                android:background="@drawable/shou_ye_top"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="2.5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2.5dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/douzi" />
+
+                <TextView
+                    android:id="@+id/doudouTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2.5dp"
+                    android:text="果果豆"
+                    android:textColor="@color/white"
+                    android:textSize="9dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/qiandao"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="12.5dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/shou_ye_top"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="2.5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2.5dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/qiandao" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2.5dp"
+                    android:text="每日签到"
+                    android:textColor="@color/white"
+                    android:textSize="9dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:id="@+id/type_dialog"
+                android:layout_width="150dp"
+                android:layout_height="125dp"
+                android:layout_centerVertical="true">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/nianjitaizi" />
+
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@mipmap/faguanggg" />
+
+                <TextView
+                    android:id="@+id/nianji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableRight="@mipmap/youjiantou"
+                    android:gravity="center"
+                    android:text="三年级"
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/kemu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@mipmap/kemukuang"
+                    android:padding="3dp"
+                    android:text="@string/english"
+                    android:textColor="@color/dack_orange" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:paddingTop="15dp">
+
+            <LinearLayout
+                android:id="@+id/paihangbang"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginRight="12.5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shou_ye_top"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="2.5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2.5dp">
+
+                <ImageView
+
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/paihangbang" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2.5dp"
+                    android:text="排行榜"
+                    android:textColor="@color/white"
+                    android:textSize="9dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/renwu"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginRight="12.5dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/shou_ye_top"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="2.5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2.5dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/renwu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2.5dp"
+                    android:text="任务消息"
+                    android:textColor="@color/white"
+                    android:textSize="9dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>

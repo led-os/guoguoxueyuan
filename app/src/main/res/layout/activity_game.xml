@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test720.grasshoppercollege.GameActivity">
+
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+    <include layout="@layout/back_fan_hui_three" />
+
+    <com.test720.grasshoppercollege.myViews.MoveTextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/shijian"
+        android:gravity="center_vertical"
+        android:paddingStart="35dp"
+        android:text="10:12"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+</RelativeLayout>

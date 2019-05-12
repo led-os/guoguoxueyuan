@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="极限只能走蜀跟吴。。群雄只适合均养。。魏国不用评论。。强无敌陈登和华佗之所以联系起来，是因为华佗曾经为陈登治过病。在《三国志·陈登传》上记载，陈登在担任广陵太守的时候，忽然有一阵子面色赤红，而且心情极其烦躁。他的属下见了，便告诉陈登说这个地方有个叫华佗的人，医术非常高明。于是陈登就派人去请华佗来给自己诊治。" />
+</LinearLayout>

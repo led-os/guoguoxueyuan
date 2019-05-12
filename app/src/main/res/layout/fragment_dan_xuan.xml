@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/beijhai"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/timu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/tiyun"
+            android:gravity="center"
+            android:paddingLeft="35dp"
+            android:paddingRight="35dp"
+            android:text=""
+            android:textColor="@color/appColor"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/baiyun"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/dack_orange"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/oneImg"
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="40dp"
+                android:layout_toEndOf="@+id/one"
+                android:contentDescription="@null"
+                android:src="@mipmap/laba"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
+
+            <TextView
+                android:id="@+id/two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/baiyun"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/dack_orange"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/twoImg"
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="40dp"
+                android:layout_toEndOf="@+id/two"
+                android:contentDescription="@null"
+                android:src="@mipmap/laba"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/baiyun"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/dack_orange"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/threeImg"
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="40dp"
+                android:layout_toEndOf="@+id/three"
+                android:contentDescription="@null"
+                android:src="@mipmap/laba"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
+
+            <TextView
+                android:id="@+id/four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/baiyun"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/dack_orange"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/fourImg"
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="40dp"
+                android:layout_toEndOf="@+id/four"
+                android:contentDescription="@null"
+                android:src="@mipmap/laba"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

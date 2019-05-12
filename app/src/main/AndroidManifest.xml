@@ -1,0 +1,1404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.test720.grasshoppercollege">
+
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--获取本机号码权限-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES_REQUESTCODE" />
+
+    <!--
+     android:allowBackup="true"
+            android:hardwareAccelerated="false"
+    -->
+    <application
+        android:name=".MyApplication"
+        android:icon="@mipmap/icon_app"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/icon_app"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:theme">
+
+        <!-- 融云相关 -->
+        <provider
+            android:name=".untils.MyFileProvider"
+            android:authorities="com.test720.grasshoppercollege.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/rc_file_path" />
+        </provider>
+
+        <!-- 支付宝alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- alipay sdk end    友盟 -->
+        <!-- 腾讯SSO授权的Activity注册 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1106052743" />
+            </intent-filter>
+        </activity>
+
+        <!-- 友盟AppKey， 需要替换成你自己的 -->
+        <!--
+            <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="585b874982b635649b000cc7" />
+        -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5c0f51c4f1f5562c830001e7" />
+
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="sdksample" />
+            </intent-filter>
+        </activity>
+        <!-- android:theme="@android:style/Theme.Translucent.NoTitleBar"-->
+        <!-- 支付宝alipay sdk begin -->
+
+        <service
+            android:name=".untils.musicMedia.MusicService"
+            android:exported="false" />
+        <!-- 关闭通知栏，通知音乐服务，关闭 -->
+        <receiver
+            android:name=".NotificationBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="notification_cancelled" />
+                <action android:name="notification_clicked" />
+                <action android:name="notification_item" />
+            </intent-filter>
+        </receiver>
+
+
+        <service
+            android:name=".untils.dingWei.LocationService"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".AppFirstActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SetIpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".StartActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.AdressChooseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.ForgetPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".login.PhoneLoginActivity" />
+        <activity android:name=".login.RegisterActivity" />
+        <activity
+            android:name=".login.ZhiJieLoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.diandu.DianDuNianJiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.diandu.DianDuShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.diandu.DianDuAddBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.SetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.SetPayPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.MyAdressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.AddAdressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.updataPhone.UpdatePhoneOldActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.UpdataPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.YiJianFanKuiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.AboutAsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChooseNianJiJiaoCaiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.PaiHangBangActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".YinDaoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shangCheng.ShangPinXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shangCheng.QueRenDingDanActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".module.userData.XiaoFeiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.youHuiJuan.MyYouHuiJuanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jiangjie.JiangJieShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jiangjie.JiangJieNianJiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jiangjie.JiangJieAddBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tingLiTest.TingLiShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jiangjie.JiangJieUntilActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tingLiTest.TingLiTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tingLiTest.TiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.TestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.fanYiChuangGuan.FanYiShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.fanYiChuangGuan.FanYiAddBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.fanYiChuangGuan.FanYiGuanKaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.danCiTingXie.DanCiTingXieShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.danCiTingXie.DanCiUnitActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuFaJiangJie.YuFaShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.fanYiChuangGuan.FanYiTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.RegisterTwoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ADActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WebViewActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".TextActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.PhoneCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.UpdataPayPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.updataPhone.UpdataPhoneNewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.SetAdressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.geRenZiLiao.PersonActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.geRenZiLiao.HeaderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.caiWu.CaiWuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.caiWu.CaiWuMingXiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.caiWu.tiXian.TiXianGuanLiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.caiWu.tiXian.TiXianTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.caiWu.tiXian.BankXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.caiWu.tiXian.BangDingBankActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.caiWu.tiXian.BangDingZFBActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.caiWu.tiXian.ZFBXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.caiWu.chongZhi.ChongZhiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.TuiJianActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.team.MyTeamActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.vip.GouMaiVipActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.vip.VipQuanYiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jiangjie.JiangjieVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".BasePingJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jiangjie.JiangJiePingJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jiangjie.JiangJieHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.aoShu.AoShuVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name=".module.shuXue.dongHuaShuXue.DongHuaVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name=".module.shuXue.aoShu.AoShuShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.dongHuaShuXue.DongHuaShuXueShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.ShuXuePingLunHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.ShuXuePingJIaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yuYanPinYinShiZi.yuYan.YuYanShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yuYanPinYinShiZi.yuYan.YuYanVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.jiangjie.JiangJiePinJiaXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.ShuXuePingLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yinBiao.YinBiaoShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yinBiao.YinBiaoVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".module.userData.xiaoXi.XiaoXiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.kouYuShiJian.KouYuShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.kouYuShiJian.SpeekTimeVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".module.kouYuShiJian.SpeekPinJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.kouYuShiJian.SpeekHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.kouYuShiJian.SpeekPingLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yinBiao.YinBiaoPinLunctivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yinBiao.YinBiaoHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yinBiao.YinBiaoPinLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.woAidanCiTingXie.WoAiTingXieShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.woAidanCiTingXie.WoAiTingXieVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".module.woAidanCiTingXie.WoAiTingXiePinJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.woAidanCiTingXie.WoAiTingXiePinJiaHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.woAidanCiTingXie.WoAiTingXiePinLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuFaJiangJie.YuFaVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".module.yuFaJiangJie.YuFaPinLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuFaJiangJie.YuFaHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuFaJiangJie.YuFaPinLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yinMeiWenHua.YinMeiShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yinMeiWenHua.YinMeiWenHuaVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".module.yinMeiWenHua.YinMeiWenHuaPinLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yinMeiWenHua.YinMeiWenHuaHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yinMeiWenHua.YinMeiWenHuaPinLInXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.team.OtherTeamActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.team.MyTeamYongJInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.aoShuLianXi.AoShuLIanXiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.aoShuLianXi.AoShuLianXiNeiRongActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.smallClass.WeiXueTangActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.dingDan.BuyClassDingDanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.childrenEdu.EduVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.childrenEdu.EduPingJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.childrenEdu.EduPinLunHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.childrenEdu.EduPinLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jinShai.JinShaiShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jinShai.JinSaiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jinShai.JinSaiOverActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.danCiTingXie.DanCiAddBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.danCiTingXie.DanCiTingXieTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuFaTest.YuFaTestTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.baiBianTingLi.BaiBianShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.baiBianTingLi.BaiBianTingLiTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.baiBianTingLi.BaiBianTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.meiRiYiJu.MeiRiShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.meiRiYiJu.MeiRiTianZiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.meiRiYiJu.MeiRiYiJuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.englishYueDu.YueDuShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.englishYueDu.YueDuTIMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.guShiCi.GuShiShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.guShiCi.GuShiXiangQingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.ciDai.CiDaiShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.ciDai.CiDaiAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.ciDai.CiDaiListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jinFanYiCi.JinFanYiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jinFanYiCi.JinfanTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.xieHouYu.XieHouYuShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.xieHouYu.BaoDianActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.xieHouYu.BaoDianTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.xieHouYu.TongGuanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.xieHouYu.lianxi.LianXiTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yuWenJiChu.YuWenJIChuShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yuWenJiChu.YuWenAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yuWenJiChu.YuWenUnitActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginDialogActivity"
+            android:theme="@style/MyActivityStyle" />
+        <activity
+            android:name=".SingLoginActivity"
+            android:theme="@style/MyActivityStyle" />
+        <activity
+            android:name=".BuyClassActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ImagePagerActivity" />
+        <activity
+            android:name=".module.yuWen.yuYanPinYinShiZi.pinYin.PingYinShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yuYanPinYinShiZi.shiZi.ShiZiShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yuYanPinYinShiZi.pinYin.PinYinVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.yuWen.yuYanPinYinShiZi.shiZi.ShiZiVideo2Activity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.yuWen.yuYanPinYinShiZi.BaseYuYanPinYinShiZiPinJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yuYanPinYinShiZi.BaseYuYanPinYinShiZIPingLunHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yuYanPinYinShiZi.YYPYSZPinLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuFaJiangJie.YuFaShouTwoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.fanYiChuangGuan.FanYiJiLeiActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.ciDai.CiDaiUnitilActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.englishYueDu.ReadTextActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.tingXieZhuShou.TingLiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.tingXieZhuShou.TingLiAddBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.tingXieZhuShou.TingXieTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.tingXieZhuShou.TingLiListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.tingXieZhuShou.TingXieTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.aoShuLianXi.AoShuLianXiJiLeiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.yingYong.YingYongShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.yingYong.YingYongNeiRongActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.yingYong.YingYongJiLeiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.jiChu.JiChuShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.jiChu.JIChuAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.jiChu.JiChuUnitlActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.jiChu.tiXing.JiChuTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.kouSuan.KouSuanShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.kouSuan.KouSuanjiLeiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.danCiTingXie.DanCiJiLeiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuFaTest.YuFaTestShouTwoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tingLiTest.TingLiTestJiLeiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yueDu.YuWenYueDuShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yueDu.YuWenYueDuTextActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.yueDu.YuWenYueDuTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.chengYu.ChengYuShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.chengYu.seeVideo.SeeVideoShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.chengYu.seeVideo.SeeVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.yuWen.chengYu.seeVideo.SeeVideoPingLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.chengYu.seeVideo.SeeVideoHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.chengYu.seeVideo.SeeVideoPinLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.yuWen.chengYu.ChengYuGuanKaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.chengYu.ChengYuTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.chengYu.kuiHua.KuiHuaShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.chengYu.kuiHua.KuiHuaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.xieHouYu.XieHouJieLeiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.jinFanYiCi.JInFanYiJiLeiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.guShiCi.GuSiListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.guShiCi.ti.GuSiTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shangCheng.ShangPinListActivity"
+            android:screenOrientation="portrait" />
+        <!-- 幼儿 -->
+        <activity
+            android:name=".module.youEr.shiZiDongHua.ShiZiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.shiZiDongHua.ShiZiDongHuaVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.youEr.shiZiDongHua.HuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.shiZiDongHua.XiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.shiZiDongHua.PingLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingYuYinYuan.ShiZiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingYuYinYuan.ShiZiDongHuaVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.youEr.yingYuYinYuan.HuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingYuYinYuan.XiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingYuYinYuan.PingLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingYuYinYuan.ShouTwoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.guoXueJingDian.ShiZiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.guoXueJingDian.ShiZiDongHuaVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.youEr.guoXueJingDian.HuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.guoXueJingDian.XiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.guoXueJingDian.PingLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.guoXueJingDian.ShouTwoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.shuXueDongHua.ShiZiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.shuXueDongHua.ShiZiDongHuaVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.youEr.shuXueDongHua.HuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.shuXueDongHua.XiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.shuXueDongHua.PingLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.pinYinDongHua.ShiZiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.pinYinDongHua.ShiZiDongHuaVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.youEr.pinYinDongHua.HuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.pinYinDongHua.XiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.pinYinDongHua.PingLunActivity"
+            android:screenOrientation="portrait" />
+        <!-- 我的订单 -->
+        <activity
+            android:name=".module.userData.myDingDan.DingDanPingJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myDingDan.DingDanXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.siWeiXuLian.HuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.siWeiXuLian.PingLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.siWeiXuLian.XiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.siWeiXuLian.VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.zhuYiLiXuLian.HuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.zhuYiLiXuLian.PingLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.zhuYiLiXuLian.XiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.zhuYiLiXuLian.VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.yuFaTest.JileiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuFaTest.shouYe.YuFaFirstActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shuXue.kouSuan.KouSuanTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.chengYu.kuiHua.jielong.ChengYuJieLongFlowActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.yuWen.chengYu.kuiHua.jielong.ChengYuJieLongActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.siWeiXuLian.SiWeiXuLianShouActivity"
+            android:screenOrientation="portrait" />
+        <!-- android:theme="@style/MyCustomTabLayout"-->
+        <activity
+            android:name=".module.zhuYiLiXuLian.ZhuYiLiXuLianShouActivity"
+            android:screenOrientation="portrait" />
+        <!--  android:theme="@style/MyCustomTabLayout"-->
+        <activity
+            android:name=".module.youEr.erGeShiJie.ErGeShiJieShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.erGeShiJie.VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.youEr.erGeShiJie.PingLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.erGeShiJie.HuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.erGeShiJie.XiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBao.BaoBaoShouActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".module.youEr.baoBao.BaoBaoDianDuActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".module.youEr.baoBao.BaoBaolianXiActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".module.youEr.youXi.YouXiShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GameActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.youEr.kouSuanDaWang.KouSuanDaWangShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.kouSuanDaWang.KouSuanDaWangTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.peiYin.PeiYinShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.peiYin.PeiYinBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.peiYin.PeiYinVideoListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.peiYin.PeiYinWanChengActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.peiYin.PeiYinXiangQingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.peiYin.PeiYinPaiHangActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.peiYin.PeiYinHeChengActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.peiYin.PeiYinPinLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.peiYin.keNei.KeiNeiBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingWenHuiBen.HuiBenShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingWenHuiBen.HuiBenBookListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingWenHuiBen.HuiBenXiangQingActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.BaoBaoTingTingShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.MusicSuoPingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.ZhuanJilistActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.MusicActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+
+            android:name=".module.youEr.yingWenHuiBen.HuiBenBoFangActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".module.gongLue.student.onLine.OnLineShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.onLine.OnLinePinLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.smallClass.SmallClassXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.onLine.OnLineActivity"
+            android:label="@string/title_activity_on_line"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".module.gongLue.peiXun.JiGouXiangQingActivity"
+            android:label="@string/title_activity_ji_gou_xiang_qing"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".module.gongLue.peiXun.xiaoXi.XiaoXiListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.peiXun.jiaoShi.TeacherListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.peiXun.jiaoShi.TeacherJieShaoActivity"
+            android:label="@string/title_activity_teacher_jie_shao"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".module.gongLue.peiXun.xiangChe.XiangCeListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.peiXun.xiangChe.XiangCeXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.peiXun.zhaoSheng.ZhaoShengListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.peiXun.zhaoSheng.ZhaoShengXiangQingActivity"
+            android:label="@string/title_activity_zhao_sheng_xiang_qing"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".module.youEr.yingWenHuiBen.zuoPin.MyHuiBenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingWenHuiBen.MyShouChangActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.peiYin.pinLun.PeiYinPinJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.peiYin.pinLun.PeiYinHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.peiYin.pinLun.PeiYinPingLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.youEr.MeiZhouShiPuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.ZhuanJiGuShiListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.pingLun.PinJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.pingLun.HuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.pingLun.PinLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.MyCollectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.BaoBaoTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.onLine.OnLinePingJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.onLine.OnLineHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.smallClass.daGang.DaGangVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".module.gongLue.student.smallClass.daGang.PingJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.smallClass.daGang.HuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.smallClass.daGang.PingLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.shiTing.ShiTingKeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.childrenEdu.EduListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.touTiao.TouTiaoListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.touTiao.TouTiaoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.touTiao.TouTiaoPinJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.touTiao.TouTiaoHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.touTiao.TouTiaoPinLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.huoDong.ActivityList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.huoDong.ActivityXiangQing"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.huoDong.PinJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.huoDong.HuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.huoDong.PinLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.shiTing.ShiTingXiangQingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.gongLue.teacher.JoinUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacher.pinTaiTeacher.PinTaiTeacherActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacher.pinTaiZiXun.ZhiXunShiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacher.pinTaiZiXun.yuYue.PinLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacher.pinTaiZiXun.yuYue.YuYueActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacher.pinTaiZiXun.yuYue.YuYueDingDanXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacher.pinTaiZiXun.wenDa.WenDaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.mySmallClass.SmallZhuanJiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.mySmallClass.SmallClassListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.myShiTing.ShiTingListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacher.pinTaiTeacher.KeChengStudentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.myCourse.MyCourseListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacher.pinTaiZiXun.wenDa.WenDaHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.myWenDa.MyWenDaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.myYuYue.MyYuYueActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.myYuYue.PinJiaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacherAndConsultant.peiXunTeacher.PeiXunTeacherXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacherAndConsultant.ziXunShi.YuYueDingDanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacherAndConsultant.peiXunTeacher.checkTime.CheckTimeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacherAndConsultant.PeiXunOrZiXunlistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacherAndConsultant.ziXunShi.ZiXunShiXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacherAndConsultant.ziXunShi.AnswerlistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacherAndConsultant.ziXunShi.LaunchAnswerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.peiXun.JiGouListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.myCollection.MyCollectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.myCollection.MyCollectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.myActivity.MyActivityList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.myActivity.MyActivityList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.KeFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.keChenBiao.KeChenBiaoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.jiaZhang.keChenBiao.KeChenBiaoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.keChenBiao.KeChenJiLuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.youHuiJuan.YouHuiJuanChooseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.TeamShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.caiWu.ZhuanYEActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.TeamYongJinActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.ZhuanChuMingXiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.daiLi.shenQing.DaiLiAdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.daiLi.shenQing.DaiLiAdressChooseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.daiLi.shenQing.ShenQingDaiLiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.daiLi.DaiLiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.daiLi.DaiLiTimeChaXunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.myTeam.daiLi.DaiLiYongJinShouYiListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shangCheng.ShangChengActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.diandu.downDianDu.DownActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.diandu.BookDianDuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.youEr.classXC.ClassXiangCeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.youEr.classXC.ClassListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.youEr.classXC.ClassXCXQActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.guoguoDou.GuoGuoDouShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.guoguoDou.GuoGuoDouJiLvActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.guoguoDou.JiFenShangChengActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.guoguoDou.DuiHuanJiLvActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.guoguoDou.GuoGuoShangPingXQActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.guoguoDou.GuoGuoDouDuihuanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.qianDao.QianDaoShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.qianDao.QianDaoJiLvActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.youEr.KindergartenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.peiXun.MechanismActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.youEr.AdmissionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.peiXun.AdmissionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.qianDao.QianDaoRenWuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.youEr.JingXuanListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.peiXun.JingXuanJiGouListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tanXian.xingkong.XingKongShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tanXian.shengLin.ShengLinShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tanXian.caoYuan.CaoYuanShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tanXian.haiDi.HaiDiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tanXian.bingChuan.BingChuanShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tanXian.reDai.ReDaiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tanXian.shaMo.ShaMoShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tanXian.diDi.DiDiShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBao.YouErBaoBaoShouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.GongLueListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.myCourse.MyCourseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacher.pinTaiZiXun.smallCourseShouRu.SmallCourseShouRuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.GongLueZhuanYEActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.ZhuanYEJLActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.ciDai.CiDaiDownActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.tanXian.TanXianTiMuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.guoguoDou.JinBiDuihuanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.huoDong.HuoDongPeoPleListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingWenHuiBen.zuoPin.ZuoPingXiangQingActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".module.youEr.yingWenHuiBen.pinLun.PingJiaHuiBenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingWenHuiBen.pinLun.HuibenPinLunXiangQingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingWenHuiBen.pinLun.HuibenPinJiaHuiFuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.yingWenHuiBen.zuoPin.ZuoPingBoFangActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation" />
+        <activity
+            android:name=".module.userData.LearningCommunity.LearningCommunityActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.onLine.OnLinePinLunListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.shiTing.ShiTingDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.smallClass.SmallPinLunListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.huoDong.HuoDongPinLunListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.shangCheng.ShangPinPinLunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.SearchZhuanJiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SubjectActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".module.youEr.baoBaoTingTing.ZhongBangListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TestYanHuaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.student.onLine.KeChengJiHuaListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.gongLue.teacher.pinTaiTeacher.TeacherKeChengShouRuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.userData.ClearCacheActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

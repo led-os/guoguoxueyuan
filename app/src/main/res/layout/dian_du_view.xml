@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.test720.grasshoppercollege.myViews.PowerFullLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/back_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/index"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:text=""
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+</com.test720.grasshoppercollege.myViews.PowerFullLayout>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:contentDescription="@null"
+                    android:src="@color/appColor" />
+
+                <LinearLayout
+                    android:id="@+id/top_lin"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@color/appColor"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/back"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="@null"
+                        android:padding="10dp"
+                        android:src="@mipmap/fanhui" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/mycaiwu"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="20dp"
+                        android:gravity="end|center_vertical"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_below="@id/top_lin"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/cai_wu_top_back">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginStart="3dp"
+                        android:background="@drawable/cai_wu_top_white">
+
+                        <ImageView
+                            android:id="@+id/src"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:contentDescription="@null"
+                            android:src="@mipmap/jine" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_toEndOf="@id/src"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/cai_wu_zong_zi_chang"
+                                android:textColor="@color/gwe"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/total_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text=""
+                                android:textColor="@color/gwe"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ming_xi"
+                        android:layout_width="190dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/cai_wu_top_white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="20dp"
+                            android:contentDescription="@null"
+                            android:src="@mipmap/shouzhimingxi" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="65dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/shouzhimingxi"
+                            android:textColor="@color/appColor"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="20dp"
+                            android:contentDescription="@null"
+                            android:padding="15dp"
+                            android:src="@mipmap/you" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lay"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/chong_zhi"
+                        android:layout_width="220dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_vertical|end"
+                            android:background="@drawable/cai_wu_ming_xi_back"
+                            android:gravity="center"
+                            android:text="@string/cong_zhi"
+                            android:textColor="@color/appColor"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/cai_wu_ming_xi_head"
+                            android:contentDescription="@null"
+                            android:padding="15dp"
+                            android:src="@mipmap/chongzhitubiao" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/mybank"
+                        android:layout_width="220dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/cai_wu_ming_xi_back"
+                            android:gravity="center"
+                            android:text="@string/bank_card"
+                            android:textColor="@color/appColor"
+                            android:textSize="16sp" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@drawable/cai_wu_ming_xi_head"
+                                android:contentDescription="@null"
+                                android:padding="15dp" />
+
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:scaleType="fitCenter"
+                                android:src="@color/white"
+                                app:riv_oval="true" />
+
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:src="@mipmap/yinghangka" />
+                        </RelativeLayout>
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/ti_xian"
+                        android:layout_width="190dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cai_wu_ming_xi_head"
+                        android:gravity="center"
+                        android:text="@string/ti_xian"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@mipmap/dibu" />
+
+</RelativeLayout>
+

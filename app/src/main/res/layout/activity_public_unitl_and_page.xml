@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_public_unitl_and_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test720.grasshoppercollege.PublicUnitlAndPageActivity">
+
+    <ExpandableListView
+        android:id="@+id/exListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:groupIndicator="@null"
+        android:scrollbars="none"></ExpandableListView>
+</RelativeLayout>

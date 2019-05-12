@@ -1,0 +1,16 @@
+<resources>
+
+    <style name="sendDialog" parent="Base.Theme.AppCompat">
+        <!-- <item name="windowActionBar">false</item>
+         <item name="windowFullscreen">true</item>
+         <item name="windowContentOverlay">@null</item>
+         <item name="windowNoTitle">true</item>-->
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

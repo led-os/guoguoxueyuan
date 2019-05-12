@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@color/lightBule">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:contentDescription="@null"
+            android:padding="10dp"
+            android:src="@mipmap/fanhui" />
+
+        <TextView
+            android:id="@+id/muse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bule_raio_kuang"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/all"
+            android:textColor="@color/appColor"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/edittext"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit_back"
+            android:drawableStart="@mipmap/pic_search"
+            android:gravity="center_vertical"
+            android:hint="@string/set_guan_jian"
+            android:inputType="text"
+            android:paddingEnd="6dp"
+            android:paddingStart="6dp"
+            android:singleLine="true"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="35dp">
+
+            <ImageView
+                android:id="@+id/xiaoxi"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null"
+                android:src="@mipmap/golan" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.test720.grasshoppercollege.BuyClassActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text=""
+                android:textColor="@color/gwe"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text=""
+                android:textColor="@color/gwe"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/moudle_mian_fei"
+                android:textColor="@color/gwe"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/white_back"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/modelPice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:text="@string/buy_moudle_price"
+                        android:textColor="@color/gwe"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/modeSw"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@mipmap/goux" />
+
+
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/classType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="30dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/monthClass"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/transparent"
+                        android:button="@null"
+                        android:drawableEnd="@android:drawable/btn_radio"
+                        android:text=""
+                        android:textColor="@color/gwe" />
+
+                    <RadioButton
+                        android:id="@+id/jiDuClass"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:button="@null"
+                        android:drawableEnd="@android:drawable/btn_radio"
+                        android:text=""
+                        android:textColor="@color/gwe" />
+
+                    <RadioButton
+                        android:id="@+id/banNianClass"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:button="@null"
+                        android:drawableEnd="@android:drawable/btn_radio"
+                        android:text=""
+                        android:textColor="@color/gwe" />
+
+                    <RadioButton
+                        android:id="@+id/yearClass"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/transparent"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawableEnd="@android:drawable/btn_radio"
+                        android:text=""
+                        android:textColor="@color/gwe" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/white_back"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/vipPice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:text="选择vip开通时限"
+                        android:textColor="@color/gwe"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/vipSw"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@mipmap/wei_xuan_zhong" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/vipType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="30dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/monthVip"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:button="@null"
+                            android:drawableEnd="@android:drawable/btn_radio"
+                            android:text=""
+                            android:textColor="@color/gwe" />
+
+                        <RadioButton
+                            android:id="@+id/jiDuVip"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:button="@null"
+                            android:drawableEnd="@android:drawable/btn_radio"
+                            android:text=""
+                            android:textColor="@color/gwe" />
+
+                        <RadioButton
+                            android:id="@+id/banNianVip"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:button="@null"
+                            android:drawableEnd="@android:drawable/btn_radio"
+                            android:text=""
+                            android:textColor="@color/gwe" />
+
+                        <RadioButton
+                            android:id="@+id/yearVip"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@android:color/transparent"
+                            android:button="@null"
+                            android:checked="true"
+                            android:drawableEnd="@android:drawable/btn_radio"
+                            android:text=""
+                            android:textColor="@color/gwe" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/you_hui_rel"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:text="@string/youhuijuan"
+                            android:textColor="@color/gwe"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/you_hui_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:drawableEnd="@mipmap/you"
+                            android:drawablePadding="5dp"
+                            android:text="@string/chooseYouHuiJuan"
+                            android:textColor="@color/orange"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/he_ji"
+                    android:textColor="@color/gwe"
+                    android:textSize="17sp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jinE"
+                        android:textColor="@color/red"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/allPice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/red"
+                        android:textSize="28sp" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/see"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/bluebantouminglight"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="@string/cha_kan_quan_yi"
+                android:textColor="@color/appColor"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp">
+
+                <CheckBox
+                    android:id="@+id/gouCheck"
+                    style="@style/mycheckbox"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/xieyi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/gouCheck"
+                    android:padding="5dp"
+                    android:text="@string/fu_wu_tiao_kuan"
+                    android:textColor="@color/gwe" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/appColor"
+        android:text="@string/que_ren_zhi_fu"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+</LinearLayout>

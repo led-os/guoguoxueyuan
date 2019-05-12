@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jinbiduihuancolor"
+    android:orientation="vertical"
+    tools:context=".module.guoguoDou.JinBiDuihuanActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@mipmap/jinbiduihuantop"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:text="@string/guoguodouduihuan"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <android.support.v7.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@mipmap/jinbiduihuantopceng"
+            android:paddingBottom="20dp"
+            android:paddingEnd="40dp"
+            android:paddingStart="40dp"
+            android:paddingTop="30dp"
+            app:columnCount="2"
+            app:rowCount="2">
+
+            <LinearLayout
+                android:id="@+id/one"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:background="@mipmap/jinbiduihuanitem"
+                android:gravity="start|center_vertical"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="50dp"
+                android:paddingTop="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:id="@+id/oneGold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0金币"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/oneDou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0颗果果豆"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/two"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:background="@mipmap/jinbiduihuanitem"
+                android:gravity="start|center_vertical"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="50dp"
+                android:paddingTop="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:id="@+id/twoGold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0金币"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/twoDou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0颗果果豆"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/three"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/jinbiduihuanitem"
+                android:gravity="start|center_vertical"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="50dp"
+                android:paddingTop="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:id="@+id/threeGold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0金币"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/threeDou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0颗果果豆"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/four"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/jinbiduihuanitem"
+                android:gravity="start|center_vertical"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="50dp"
+                android:paddingTop="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:id="@+id/fourGold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0金币"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/fourDou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0颗果果豆"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+
+        </android.support.v7.widget.GridLayout>
+
+        <android.support.v7.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@mipmap/jinbitucheng"
+            android:paddingBottom="20dp"
+            android:paddingEnd="40dp"
+            android:paddingStart="40dp"
+            android:paddingTop="45dp"
+            app:columnCount="2"
+            app:rowCount="2">
+
+            <LinearLayout
+                android:id="@+id/oneV"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:background="@mipmap/jinbiduihuanitem"
+                android:gravity="start|center_vertical"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="50dp"
+                android:paddingTop="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:id="@+id/oneGoldV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0金币"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/oneDouV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0颗果果豆"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/twoV"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:background="@mipmap/jinbiduihuanitem"
+                android:gravity="start|center_vertical"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="50dp"
+                android:paddingTop="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:id="@+id/twoGoldV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0金币"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/twoDouV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0颗果果豆"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/threeV"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/jinbiduihuanitem"
+                android:gravity="start|center_vertical"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="50dp"
+                android:paddingTop="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:id="@+id/threeGoldV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0金币"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/threeDouV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0颗果果豆"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fourV"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/jinbiduihuanitem"
+                android:gravity="start|center_vertical"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="50dp"
+                android:paddingTop="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1">
+
+                <TextView
+                    android:id="@+id/fourGoldV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0金币"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/fourDouV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0颗果果豆"
+                    android:textColor="@color/gwe"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+
+        </android.support.v7.widget.GridLayout>
+
+
+        <TextView
+            android:id="@+id/getVip"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@mipmap/jinbiduihuanbtn"
+            android:gravity="bottom|center_horizontal"
+            android:paddingBottom="8dp"
+            android:text="@string/getvip"
+            android:textColor="@color/gwe"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <com.test720.grasshoppercollege.myViews.TanXianGuankaView
+        android:id="@+id/feivipYun"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        auto:src="@color/touming" />
+
+    <com.test720.grasshoppercollege.myViews.TanXianGuankaView
+        android:id="@+id/vipYun"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        auto:src="@color/touming" />
+
+    <include layout="@layout/back_fan_hui_three" />
+</RelativeLayout>
