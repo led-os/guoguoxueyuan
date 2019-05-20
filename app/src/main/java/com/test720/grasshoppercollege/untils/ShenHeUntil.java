@@ -1,5 +1,8 @@
 package com.test720.grasshoppercollege.untils;
 
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+
 import com.test720.grasshoppercollege.MyApplication;
 
 import www.test720.mylibrary.SPUtils;
@@ -28,7 +31,6 @@ public class ShenHeUntil {
     private ShenHeUntil() {
     }
 
-
     //2.0 百度3.0、、
     // 2.1 华为3.1,,
     // 2.2 腾讯 3.2
@@ -37,10 +39,38 @@ public class ShenHeUntil {
     //  2.5 360
     //  2.6 vivo
     // 2.7 魅族
-    String biaoShi = "7.7";//当前审核标示
-
+    //当前审核版本标示
     public String getBiaoShi() {
-        return biaoShi;
+        return getVerCode() + getChannel();
+    }
+
+    /**
+     * @return 渠道来源
+     */
+    private String getChannel() {
+        try {
+            PackageManager pm = MyApplication.getmInstance().getPackageManager();
+            ApplicationInfo appInfo = pm.getApplicationInfo(MyApplication.getmInstance().getPackageName(), PackageManager.GET_META_DATA);
+            return appInfo.metaData.getString("GUOGUO_CHANNEL");
+        } catch (PackageManager.NameNotFoundException ignored) {
+        }
+        return "";
+    }
+
+    /**
+     * 得到软件版本号
+     *
+     * @return 当前版本Code
+     */
+    private int getVerCode() {
+        int verCode = -1;
+        try {
+            String packageName = MyApplication.getmInstance().getPackageName();
+            verCode = MyApplication.getmInstance().getPackageManager().getPackageInfo(packageName, 0).versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return verCode;
     }
 
     /**

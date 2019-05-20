@@ -94,6 +94,10 @@
             android:value="585b874982b635649b000cc7" />
         -->
         <meta-data
+            android:name="GUOGUO_CHANNEL"
+            android:value="${GUOGUO_CHANNEL_VALUE}" />
+        <!-- 750*1334 -->
+        <meta-data
             android:name="UMENG_APPKEY"
             android:value="5c0f51c4f1f5562c830001e7" />
 

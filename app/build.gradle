@@ -46,18 +46,68 @@ android {
             signingConfig signingConfigs.config
         }
     }
+    //多渠道打包
+    flavorDimensions "channle"
+    productFlavors {
+        baidu {
+            dimension "channle"
+            manifestPlaceholders = [GUOGUO_CHANNEL_VALUE: ".0"]
+        }
+        huawei {
+            dimension "channle"
+            manifestPlaceholders = [GUOGUO_CHANNEL_VALUE: ".1"]
+        }
+        tencent {
+            dimension "channle"
+            manifestPlaceholders = [GUOGUO_CHANNEL_VALUE: ".2"]
+        }
+        xiaomi {
+            dimension "channle"
+            manifestPlaceholders = [GUOGUO_CHANNEL_VALUE: ".3"]
+        }
+        oppo {
+            dimension "channle"
+            manifestPlaceholders = [GUOGUO_CHANNEL_VALUE: ".4"]
+        }
+        zhushou360 {
+            dimension "channle"
+            manifestPlaceholders = [GUOGUO_CHANNEL_VALUE: ".5"]
+        }
+        vivo {
+            dimension "channle"
+            manifestPlaceholders = [GUOGUO_CHANNEL_VALUE: ".6"]
+        }
+        meizhu {
+            dimension "channle"
+            manifestPlaceholders = [GUOGUO_CHANNEL_VALUE: ".7"]
+        }
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [GUOGUO_CHANNEL_VALUE: name]
+        }
+
+        /*applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def outputFile = output.outputFile
+                if (variant.buildType.name.equals('release')) {
+                    //生成apk名字的格式：Channel1.0.0_2016-06-22_baidu.apk
+                    //可自定义自己想要生成的格式
+                    def fileName = "ver${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                    output.outputFile = new File(outputFile.parent, fileName)
+                }
+            }
+        }*/
+    }
+
     lintOptions {
         //即使有lint报错也不停止打包
         checkReleaseBuilds false
         abortOnError false
     }
-
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
         }
     }
-
     packagingOptions {
         exclude 'assets/com.tencent.open.config.json'
         exclude 'assets/libwbsafeedit_x86_64'
@@ -76,6 +126,11 @@ greendao {
     targetGenDir 'src/main/java'
 
 }
+
+def releaseTime() {
+    return new Date().format("MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
 dependencies {
     configurations {
         all*.exclude group: 'com.google.code.gson'

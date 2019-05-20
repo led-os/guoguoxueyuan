@@ -85,6 +85,7 @@ public class StartActivity extends BaseToolActivity {
         toLogin();
         ad();
         check();
+        LogUtil.logError("审核标示版本" + ShenHeUntil.getInstance().getBiaoShi());
         mainHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
