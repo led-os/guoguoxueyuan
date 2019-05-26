@@ -14,6 +14,7 @@ import com.greendao.gen.bean.DownBeanData;
 import com.test720.grasshoppercollege.Adapter.BaseRecyclerHolder;
 import com.test720.grasshoppercollege.Adapter.MyBaseRecyclerAdapter;
 import com.test720.grasshoppercollege.R;
+import com.test720.grasshoppercollege.untils.LogUtil;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionListener;
 
@@ -70,6 +71,7 @@ public class DownAdapter extends MyBaseRecyclerAdapter<DownBeanData> {
                             return;
                         }
                         DownloadUtils.downLoad(mcontext, item.getUrl(), item.getSavePath(), item.getZipName(), 1);
+                        LogUtil.logError("下载地址" + item.getUrl());
                     }
 
                     @Override

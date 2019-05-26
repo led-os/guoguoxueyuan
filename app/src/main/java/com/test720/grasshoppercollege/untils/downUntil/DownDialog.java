@@ -28,6 +28,7 @@ import com.yanzhenjie.permission.PermissionListener;
 
 import java.io.File;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -45,7 +46,7 @@ import butterknife.OnClick;
  * 但见成都府国内，处处地地程序员。
  * 作者：水东流 编于 2018/10/12
  */
-public class DownDialog extends BaseOkDialogFragment {
+public class DownDialog extends BaseOkDialogFragment implements ZipUntil.ZipProgress {
     @BindView(R.id.seekBar)
     SeekBar seekBar;
     @BindView(R.id.start)
@@ -218,16 +219,16 @@ public class DownDialog extends BaseOkDialogFragment {
                 DownloadData finished = (DownloadData) eventMessage.getObject();
                 LogUtil.logError("下载完成");
                 status.setText("解压中");
-//                zipDialog.show(getChildFragmentManager(), "zip");
                 //下载完成后调用解压，解压到本地file目录
                 LogUtil.logError("zip下载完成" + finished.getFilePath());
+
                 File zipFile = new File(finished.getFilePath());
                 ZipUntil zipUntil = new ZipUntil(fileName, "", moudle);
-                zipUntil.upZipFile(zipFile, mContext, zipOkEnvent);
+                zipUntil.upZipFile(zipFile, mContext, zipOkEnvent, this);
                 //停止之前的下载服务
-                Intent intent = new Intent(getContext(),
+                Intent intent = new Intent(getActivity(),
                         DownloadService.class);
-                getContext().stopService(intent);
+                Objects.requireNonNull(getActivity()).stopService(intent);
                 break;
 
             case EventMessage.TYPE_ERROR://下载失败
@@ -275,4 +276,13 @@ public class DownDialog extends BaseOkDialogFragment {
         }
     }
 
+    @Override
+    public void zipProgressBar(final int pro) {
+        Objects.requireNonNull(getActivity()).runOnUiThread(() -> {
+            status.setText("解压中");
+            if (seekBar != null) {
+                seekBar.setProgress(pro);
+            }
+        });
+    }
 }

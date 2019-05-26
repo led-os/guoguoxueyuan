@@ -41,7 +41,34 @@ public class ShenHeUntil {
     // 2.7 魅族
     //当前审核版本标示
     public String getBiaoShi() {
-        return getVerCode() + getChannel();
+        String bs = "";
+        switch (getChannel()) {
+            case "baidu":
+                bs = ".0";
+                break;
+            case "huawei":
+                bs = ".1";
+                break;
+            case "tencent":
+                bs = ".2";
+                break;
+            case "xiaomi":
+                bs = ".3";
+                break;
+            case "oppo":
+                bs = ".4";
+                break;
+            case "zhushou360":
+                bs = ".5";
+                break;
+            case "vivo":
+                bs = ".6";
+                break;
+            case "meizhu":
+                bs = ".7";
+                break;
+        }
+        return getVerCode() + bs;
     }
 
     /**

@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.multidex.MultiDex;
@@ -179,7 +180,7 @@ public class MyApplication extends Application implements Thread.UncaughtExcepti
         // PlatformConfig.setQQZone("1105830983", "Tz0Vd28Wdyb9v8V2");//QQAPPID和AppSecret
         PlatformConfig.setQQZone("1106052743", "v1fkLTAO8dbsfwtN");//QQAPPID和AppSecret
         UMConfigure.setLogEnabled(true);
-        CrashHandler.getInstance().init(this);
+        if (!isApkInDebug(this)) CrashHandler.getInstance().init(this);
         // 设置点击事件间隔
         registerActivityLifecycleCallbacks(lifecycleCallbacks);
         //重置tokenstr为游客模式
@@ -223,6 +224,15 @@ public class MyApplication extends Application implements Thread.UncaughtExcepti
         RongIM.setConnectionStatusListener(new SingLogin(getmInstance()));
     }
 
+    //判断当前应用是否是debug状态
+    private static boolean isApkInDebug(Context context) {
+        try {
+            ApplicationInfo info = context.getApplicationInfo();
+            return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
     /**
      * 重新初始化应用界面，清空当前Activity棧，并启动欢迎页面

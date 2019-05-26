@@ -128,18 +128,15 @@ public class DownActivity extends BaseToolActivity {
                 //下载完成后调用解压，解压到本地file目录
                 ZipUntil zipUntil = new ZipUntil(list.get(0).getFileName(), bookDataBean.getData().getBook().getVersion_number(), "英语点读");
                 File zipFile = new File(finished.getFilePath());
-                zipUntil.upZipFile(zipFile, mcontext, new ZipUntil.ZipOkEnvent() {
-                    @Override
-                    public void zipOkEnvent() {
-                        //插入书本数据
-                        BookDataInsterUntil downUntil = new BookDataInsterUntil();
-                        int i = downUntil.insert(mcontext, bookDataBean);
-                        FormBody.Builder builder = new FormBody.Builder();
-                        builder.add("uid", MyApplication.getmInstance().getUid());
-                        builder.add("book_id", bookId);
-                        Post(HttpUntil.GetIntent().ReadingaddBook(), builder, 10000, false);
-                    }
-                });
+                zipUntil.upZipFile(zipFile, mcontext, () -> {
+                    //插入书本数据
+                    BookDataInsterUntil downUntil = new BookDataInsterUntil();
+                    int i = downUntil.insert(mcontext, bookDataBean);
+                    FormBody.Builder builder = new FormBody.Builder();
+                    builder.add("uid", MyApplication.getmInstance().getUid());
+                    builder.add("book_id", bookId);
+                    Post(HttpUntil.GetIntent().ReadingaddBook(), builder, 10000, false);
+                }, zipDialog);
                 //停止之前的下载服务
                 Intent intent1 = new Intent(this,
                         DownloadService.class);

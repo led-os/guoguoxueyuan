@@ -1,14 +1,19 @@
 package com.test720.grasshoppercollege.module.diandu.downDianDu;
 
 import android.content.DialogInterface;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.SeekBar;
 
 import com.test720.grasshoppercollege.BaseOkDialogFragment;
 import com.test720.grasshoppercollege.R;
+import com.test720.grasshoppercollege.untils.downUntil.ZipUntil;
+
+import java.util.Objects;
+
+import butterknife.BindView;
 
 /**
  * 佛祖保佑        永无BUG
@@ -23,7 +28,13 @@ import com.test720.grasshoppercollege.R;
  * 但见成都府国内，处处地地程序员。
  * 作者：水东流 编于 2018/11/24
  */
-public class ZipDialog extends BaseOkDialogFragment {
+public class ZipDialog extends BaseOkDialogFragment implements ZipUntil.ZipProgress {
+    @BindView(R.id.img)
+    ImageView img;
+    @BindView(R.id.seekBar)
+    SeekBar seekBar;
+
+
     @Override
     public DialogInit dialogInit() {
         return new DialogInit() {
@@ -44,7 +55,7 @@ public class ZipDialog extends BaseOkDialogFragment {
 
             @Override
             public int heightLayout() {
-                return  WindowManager.LayoutParams.MATCH_PARENT;
+                return WindowManager.LayoutParams.MATCH_PARENT;
             }
         };
     }
@@ -53,7 +64,6 @@ public class ZipDialog extends BaseOkDialogFragment {
     public int layoutId() {
         return R.layout.zip_dialog;
     }
-
 
 
     @Override
@@ -74,4 +84,15 @@ public class ZipDialog extends BaseOkDialogFragment {
     public void getSuccess(String s, int what) {
 
     }
+
+
+    @Override
+    public void zipProgressBar(int pro) {
+        Objects.requireNonNull(getActivity()).runOnUiThread(() -> {
+            if (seekBar != null) {
+                seekBar.setProgress(pro);
+            }
+        });
+    }
+
 }

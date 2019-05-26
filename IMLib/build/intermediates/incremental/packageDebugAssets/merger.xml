@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\githubThree\guoguoxueyuan\IMLib\src\main\assets"/><source path="E:\githubThree\guoguoxueyuan\IMLib\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\githubThree\guoguoxueyuan\IMLib\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\gitHub\guoguoxueyuan\IMLib\src\main\assets"/><source path="E:\gitHub\guoguoxueyuan\IMLib\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\gitHub\guoguoxueyuan\IMLib\src\debug\assets"/></dataSet></merger>

@@ -203,7 +203,7 @@ public class CiDaiDownActivity extends BaseToolActivity {
                             Post(HttpUntil.GetIntent().EnCdaddReadingPoints(), builder, 10000);
                         }
                     }
-                });
+                },zipDialog);
                 //停止之前的下载服务
                 Intent intent = new Intent(this,
                         DownloadService.class);

@@ -1,7 +1,6 @@
 package com.test720.grasshoppercollege.untils.downUntil;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -48,7 +47,7 @@ public class ZipUntil {
     private String name;
     private String version;
     private String moudle;
-    ZipFileDataDao zipFileDataDao;
+    private ZipFileDataDao zipFileDataDao;
 
     public ZipUntil() {
         zipFileDataDao = MyApplication.getmInstance().getManage().getZipFileDataDao();
@@ -67,13 +66,18 @@ public class ZipUntil {
      * @param zipFile 压缩文件
      * @throws IOException 当解压缩过程出错时抛出
      */
-    public void upZipFile(final File zipFile, Context mcontext, final ZipOkEnvent zipOkEnvent) {
+    public void upZipFile(final File zipFile, Context mcontext, final ZipOkEnvent zipOkEnvent, ZipProgress zipProgress) {
         final String folderPath = mcontext.getFilesDir() + "/downloads";
         AndPermission.with(mcontext).requestCode(100).permission(Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.READ_EXTERNAL_STORAGE).callback(new PermissionListener() {
             @Override
             public void onSucceed(int requestCode, @NonNull List<String> grantPermissions) {
-                new Thread(new MyRun(folderPath, zipFile, zipOkEnvent)).start();
+                if (requestCode == 100)
+                    Flowable.just(1)
+                            .observeOn(Schedulers.newThread())
+                            .subscribe(integer -> {
+                                runEvent(folderPath, zipFile, zipOkEnvent, zipProgress);
+                            });
             }
 
             @Override
@@ -84,6 +88,7 @@ public class ZipUntil {
 
     }
 
+
     /**
      * 解压方法
      *
@@ -91,15 +96,19 @@ public class ZipUntil {
      * @param zipFile
      * @param zipOkEnvent
      */
-    private void runEvent(String folderPath, File zipFile, ZipOkEnvent zipOkEnvent) {
+    private void runEvent(String folderPath, File zipFile, ZipOkEnvent zipOkEnvent, ZipProgress zipProgress) {
+        long ziplength = 0; // 获取解压之后文件的大小,用来计算解压的进度
+        long okLength = 0;//已经解压的文件大小长度
         File desDir = new File(folderPath);
         if (!desDir.exists()) {
             desDir.mkdirs();
         }
-        ZipFile zf = null;
+        ZipFile zf;
         try {
             zf = new ZipFile(zipFile);
+            ziplength = getZipTrueSize(zf);
             LogUtil.logError("zip文件名" + zf.getName());
+            LogUtil.logError("zip文件大小" + zf.size());
             for (Enumeration<?> entries = zf.entries(); entries.hasMoreElements(); ) {
                 ZipEntry entry = ((ZipEntry) entries.nextElement());
                 if (entry.isDirectory()) {
@@ -126,6 +135,9 @@ public class ZipUntil {
                     out.write(buffer, 0, realLength);
                 }
                 LogUtil.logError(desFile.getName() + "解压完成");
+                okLength = okLength + desFile.length();
+                if (zipProgress != null)
+                    zipProgress.zipProgressBar((int) ((okLength * 100) / ziplength));
                 in.close();
                 out.close();
             }
@@ -163,26 +175,18 @@ public class ZipUntil {
     }
 
     /**
-     * 解压线程
+     * 获取压缩包解压后的内存大小
+     * 文件路径
+     *
+     * @return 返回内存long类型的值
      */
-    class MyRun implements Runnable {
-        String folderPath;
-        File zipFile;
-        ZipOkEnvent zipOkEnvent;
-
-        public MyRun(String folderPath, File zipFile, ZipOkEnvent zipOkEnvent) {
-            this.folderPath = folderPath;
-            this.zipFile = zipFile;
-            this.zipOkEnvent = zipOkEnvent;
+    public long getZipTrueSize(ZipFile f) {
+        long size = 0;
+        Enumeration<? extends ZipEntry> en = f.entries();
+        while (en.hasMoreElements()) {
+            size += en.nextElement().getSize();
         }
-
-        @SuppressLint("CheckResult")
-        @Override
-        public void run() {
-            Flowable.just(1)
-                    .observeOn(Schedulers.io())
-                    .subscribe(integer -> runEvent(folderPath, zipFile, zipOkEnvent));
-        }
+        return size;
     }
 
     /**
@@ -236,7 +240,7 @@ public class ZipUntil {
      *
      * @param dir 目录
      */
-    public void deleteDirWihtFile(File dir) {
+    private void deleteDirWihtFile(File dir) {
 
         if (dir == null || !dir.exists() || !dir.isDirectory())
             return;
@@ -253,6 +257,11 @@ public class ZipUntil {
 
     public interface ZipOkEnvent {
         void zipOkEnvent();
+
+    }
+
+    public interface ZipProgress {
+        void zipProgressBar(int pro);//解压进度
     }
 
     public interface DeleListener {

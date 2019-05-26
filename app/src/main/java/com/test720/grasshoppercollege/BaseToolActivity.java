@@ -586,8 +586,15 @@ public abstract class BaseToolActivity extends AppCompatActivity {
         }
         Message message = new Message();
         message.what = INITDIALOG;
-        if (myHandler != null) myHandler.sendMessage(message);
-
+        if (myHandler != null) {
+            myHandler.sendMessage(message);
+            myHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    DismissDialong();
+                }
+            }, 3000);
+        }
     }
 
     private void initDialog() {
